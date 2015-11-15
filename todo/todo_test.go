@@ -15,5 +15,19 @@ package main
 import (
 	"testing"
 
-	"github.com/sourcegraph/go-selenium"
+	"sourcegraph.com/sourcegraph/go-selenium"
 )
+
+var caps selenium.Capabilities = selenium.Capabilities(map[string]interface{}{"browserName": "chrome"})
+var executorURL = "http://127.0.0.1:4444/wd/hub"
+
+func TestTodo(t *testing.T) {
+	wd, _ := selenium.NewRemote(caps, executorURL)
+	wdt := wd.T(t)
+	wdt.Get("http://127.0.0.1:8080")
+
+	title := wdt.Title()
+	if title != "TODO" {
+		t.Errorf("Wanted title TODO, got %s", title)
+	}
+}

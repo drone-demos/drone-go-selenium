@@ -25,7 +25,7 @@ import (
 
 var tasks, _ = task.NewTaskManager(
 	"sqlite3",
-	"todo.sqlite",
+	":memory:",
 )
 
 func RegisterHandlers() {

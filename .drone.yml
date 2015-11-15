@@ -3,13 +3,12 @@ build:
   environment:
     - GO15VENDOREXPERIMENT=1
   commands:
-    - sleep 10
-    - go get -v ./...
-    - go test -v -cover ./...
+    - go get -t ./...
+    - go test -cover -v github.com/drone-demos/drone-go-selenium/task
+    - cd todo
+    - "go run todo.go &"
+    - go test -v
 
 compose:
-  database:
-    image: mysql:5.6.27
-    environment:
-      - MYSQL_DATABASE=todo
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes    
+  selenium:
+    image: selenium/standalone-chrome
