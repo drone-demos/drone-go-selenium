@@ -13,12 +13,13 @@
 package main
 
 import (
+	"os"
 	"testing"
 
 	"sourcegraph.com/sourcegraph/go-selenium"
 )
 
-var caps selenium.Capabilities = selenium.Capabilities(map[string]interface{}{"browserName": "chrome"})
+var caps = selenium.Capabilities(map[string]interface{}{"browserName": os.Getenv("BROWSER")})
 var executorURL = "http://127.0.0.1:4444/wd/hub"
 
 func TestTodo(t *testing.T) {
