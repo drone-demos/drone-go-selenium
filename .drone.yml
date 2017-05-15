@@ -1,5 +1,6 @@
 workspace:
   base: /go
+  path: src/github.com/drone-demos/drone-go-selenium
 
 pipeline:
   build:
@@ -8,7 +9,6 @@ pipeline:
       - go get github.com/mattn/go-sqlite3
       - go get github.com/gorilla/mux
       - go get sourcegraph.com/sourcegraph/go-selenium
-      - go test -v github.com/drone-demos/drone-go-selenium/task
       - cd todo
       - "go run todo.go &"
       - go test -v
