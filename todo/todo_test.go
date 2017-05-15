@@ -19,7 +19,7 @@ import (
 )
 
 var caps selenium.Capabilities = selenium.Capabilities(map[string]interface{}{"browserName": "chrome"})
-var executorURL = "http://127.0.0.1:4444/wd/hub"
+var executorURL = "http://selenium:4444/wd/hub"
 
 func TestTodo(t *testing.T) {
 	wd, _ := selenium.NewRemote(caps, executorURL)
