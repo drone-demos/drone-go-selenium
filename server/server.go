@@ -65,7 +65,7 @@ func errorHandler(f func(w http.ResponseWriter, r *http.Request) error) http.Han
 	}
 }
 
-// ListTask handles GET requests on /task.
+// ListTasks handles GET requests on /task.
 //
 // Example:
 //

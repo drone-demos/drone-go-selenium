@@ -3,12 +3,9 @@ workspace:
   path: src/github.com/drone-demos/drone-go-selenium
 
 pipeline:
-  build:
+  test:
     image: golang:1.8
     commands:
-      - go get github.com/mattn/go-sqlite3
-      - go get github.com/gorilla/mux
-      - go get sourcegraph.com/sourcegraph/go-selenium
       - cd todo
       - "go run todo.go &"
       - go test -v
@@ -16,3 +13,9 @@ pipeline:
 services:
   selenium:
     image: selenium/standalone-chrome
+
+  # app:
+  #   image: golang:1.8
+  #   entrypoint: [ "/bin/sh" ]
+  #   command: [ "-c", "cd /go/src/github.com/drone-demos/drone-go-selenium/todo; go run todo.go" ]
+  #

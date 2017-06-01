@@ -1,0 +1,37 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "urMd7A9QPAJYY0GZJL9qBhlUmD8=",
+			"path": "github.com/gorilla/mux",
+			"revision": "757bef944d0f21880861c2dd9c871ca543023cba",
+			"revisionTime": "2016-09-20T23:08:13Z"
+		},
+		{
+			"checksumSHA1": "Ef3+gi97QEvLS9VonbjOF/cZnDQ=",
+			"path": "github.com/mattn/go-sqlite3",
+			"revision": "b2e464529e88db676302aa63a4ce36711633950e",
+			"revisionTime": "2017-03-24T00:12:00Z"
+		},
+		{
+			"checksumSHA1": "Y+HGqEkYM15ir+J93MEaHdyFy0c=",
+			"path": "golang.org/x/net/context",
+			"revision": "3e967e1d28d2c9c06e749dc2bdc14b04df89e689",
+			"revisionTime": "2017-03-19T17:08:14Z"
+		},
+		{
+			"checksumSHA1": "T8KcS1ejJdfQ905cQ1qLN6WUXxQ=",
+			"path": "sourcegraph.com/sourcegraph/go-selenium",
+			"revision": "3da7d00aac9c68d0a04f768e23c4cfee60404981",
+			"revisionTime": "2017-01-13T15:52:44Z"
+		}
+	],
+	"rootPath": "github.com/drone-demos/drone-go-selenium"
+}
