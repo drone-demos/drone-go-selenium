@@ -1,3 +1,7 @@
+workspace:
+  base: /go
+  path: src/github.com/drone-demos/drone-go-selenium
+
 pipeline:
   test:
     image: golang:1.8
