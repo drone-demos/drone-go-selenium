@@ -20,12 +20,12 @@ import (
 )
 
 var caps = selenium.Capabilities(map[string]interface{}{"browserName": os.Getenv("BROWSER")})
-var executorURL = "http://127.0.0.1:4444/wd/hub"
+var executorURL = "http://selenium:4444/wd/hub"
 
 func TestTodo(t *testing.T) {
 	wd, _ := selenium.NewRemote(caps, executorURL)
 	wdt := wd.T(t)
-	wdt.Get("http://127.0.0.1:8080")
+	wdt.Get("http://test:8080")
 
 	title := wdt.Title()
 	if title != "TODO" {
