@@ -1,28 +1,27 @@
-build:
-  image: golang:1.5
-  environment:
-    - GO15VENDOREXPERIMENT=1
-  commands:
-    - go get -t ./...
-    - go test -cover -v github.com/drone-demos/drone-go-selenium/task
-    - cd todo
-    - "go run todo.go &"
-    - BROWSER=firefox go test -v
-    - BROWSER=chrome go test -v
+pipeline:
+  build:
+    image: golang:1.5
+    environment:
+      - GO15VENDOREXPERIMENT=1
+    commands:
+      - go get -t ./...
+      - go test -cover -v github.com/drone-demos/drone-go-selenium/task
+      - cd todo
+      - "go run todo.go &"
+      - BROWSER=firefox go test -v
+      - BROWSER=chrome go test -v
 
-compose:
-  selenium:
+services:
+  hub:
     image: selenium/hub
   chrome:
     image: selenium/node-chrome:2.48.2
     environment:
-      SE_OPTS: "-port 4445"
-      HUB_PORT_4444_TCP_ADDR: 127.0.0.1
+      HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
   firefox:
     image: selenium/node-firefox:2.48.2
     environment:
-      SE_OPTS: "-port 4446"
-      HUB_PORT_4444_TCP_ADDR: 127.0.0.1
+      HUB_PORT_4444_TCP_ADDR: hub
       HUB_PORT_4444_TCP_PORT: 4444
       DISPLAY: ":98.0"
