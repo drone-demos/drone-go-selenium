@@ -8,7 +8,6 @@ pipeline:
     commands:
       - cd todo
       - "go run todo.go &"
-      - BROWSER=firefox go test -v
       - BROWSER=chrome go test -v
 
 services:
