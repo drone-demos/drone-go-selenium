@@ -14,8 +14,3 @@ services:
   selenium:
     image: selenium/standalone-chrome
 
-  # app:
-  #   image: golang:1.8
-  #   entrypoint: [ "/bin/sh" ]
-  #   command: [ "-c", "cd /go/src/github.com/drone-demos/drone-go-selenium/todo; go run todo.go" ]
-  #
